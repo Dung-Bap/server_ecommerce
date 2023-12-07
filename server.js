@@ -14,7 +14,7 @@ app.use(
     cors({
         origin: process.env.CLIENT_URL,
         methods: ['POST, PUT, GET, DELETE'],
-        withCredentials: true, //credentials khi đăng ký tài khoản thì lưu vào cookie trình duyệt
+        useCredentials: true, //credentials khi đăng ký tài khoản thì lưu vào cookie trình duyệt
     })
 );
 
