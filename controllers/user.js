@@ -68,7 +68,7 @@ const finalRegister = asyncHandler(async (req, res) => {
     const { token } = req.params;
     if (!cookie || cookie?.dataregister?.token !== token) {
         res.clearCookie('dataregister');
-        return res.redirect(`${process.env.CLIENT_URL}/finalregister/failed`);
+        return res.redirect(`${process.env.CLIENT_DEPLOY_URL}/finalregister/failed`);
     }
 
     // tao ra document user
@@ -80,8 +80,8 @@ const finalRegister = asyncHandler(async (req, res) => {
         phone: cookie?.dataregister?.phone,
     });
     res.clearCookie('dataregister');
-    if (newUser) return res.redirect(`${process.env.CLIENT_URL}/finalregister/success`);
-    else return res.redirect(`${process.env.CLIENT_URL}/finalregister/failed`);
+    if (newUser) return res.redirect(`${process.env.CLIENT_DEPLOY_URL}/finalregister/success`);
+    else return res.redirect(`${process.env.CLIENT_DEPLOY_URL}/finalregister/failed`);
 });
 
 //api/user/login
